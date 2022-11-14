@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  namespace: uat
+  name: bank-application
+  annotations:
+    kubernetes.io/ingress.class: nginx
+#    certmanager.k8s.io/cluster-issuer: "letsencrypt-staging"
+spec:
+  rules:
+    - host: bank.livelihoodzone.xyz
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: bank-application
+              servicePort: 8080

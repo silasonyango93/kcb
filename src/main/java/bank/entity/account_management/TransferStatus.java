@@ -1,0 +1,8 @@
+package bank.entity.account_management;
+
+public enum TransferStatus {
+    ORIGINATOR_ACCOUNT_NON_EXISTENT,
+    RECEPIENT_ACCOUNT_NON_EXISTENT,
+    INSUFICIENT_ORIGINATOR_ACCOUNT_FUNDS,
+    SUCCESSFUL_TRANSFER
+}

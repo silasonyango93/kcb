@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: uat
+  name: bank-application
+  labels:
+    name: bank-application
+    app: bank-application
+spec:
+  selector:
+    matchLabels:
+      app: bank-application
+  template:
+    metadata:
+      name: bank-application
+      labels:
+        name: bank-application
+        app: bank-application
+    spec:
+      containers:
+        - name: bank-application
+          imagePullPolicy: Always
+          image: silasonyango93/bank:latest
+          ports:
+            - containerPort: 8080
